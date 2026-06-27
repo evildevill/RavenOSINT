@@ -1,0 +1,24 @@
+name: False positive
+description: Report a site returning false positive results
+title: "False positive for: "
+labels: ["false positive"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Include the site name in the title. Submit **one site per report**.
+  - type: textarea
+    id: info
+    attributes:
+      label: Additional info
+      placeholder: |
+        Reddit is returning false positives because...
+    validations:
+      required: false
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true

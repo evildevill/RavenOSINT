@@ -1,0 +1,93 @@
+[package]
+name = "raven"
+version = "0.1.0"
+edition = "2021"
+description = "A high-performance Rust OSINT tool for username reconnaissance across hundreds of online platforms."
+license = "MPL-2.0"
+repository = "https://github.com/evildevill/RavenOSINT"
+keywords = [
+    "osint",
+    "username",
+    "reconnaissance",
+    "social-media",
+    "investigation"
+]
+
+categories = [
+    "command-line-utilities",
+    "network-programming"
+]
+
+[dependencies]
+# Async runtime
+tokio = { version = "1", features = ["full"] }
+
+# HTTP client with SOCKS5 proxy support
+reqwest = { version = "0.12", features = ["json", "socks"] }
+
+# Serialization
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+toml = "0.8"
+
+# CLI argument parsing
+clap = { version = "4", features = ["derive", "env"] }
+clap_complete = "4"
+
+# Terminal output
+colored = "2"
+
+# Error handling
+thiserror = "2"
+
+# Logging
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# Async utilities
+futures = "0.3"
+
+# Progress bar
+indicatif = "0.17"
+
+# Regex (with look-around support)
+fancy-regex = "0.13"
+
+# CSV output
+csv = "1"
+
+# Excel output
+rust_xlsxwriter = "0.84"
+
+# Time handling
+chrono = { version = "0.4", features = ["serde"] }
+
+# URL handling
+url = "2"
+
+# SQLite for scan history
+rusqlite = { version = "0.31", features = ["bundled"] }
+
+# Cron expression parsing
+cron = "0.14"
+
+# Browser opening
+webbrowser = "1"
+
+# Random generation (for username validation fallbacks)
+rand = "0.8"
+
+# Web server
+axum = { version = "0.7", features = ["macros"] }
+tower-http = { version = "0.5", features = ["cors"] }
+tokio-stream = { version = "0.1", features = ["sync"] }
+uuid = { version = "1", features = ["v4"] }
+
+# Config directory
+directories = "5"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+strip = true

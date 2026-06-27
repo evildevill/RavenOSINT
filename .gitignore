@@ -1,0 +1,21 @@
+/target/
+
+# Compiled binaries
+raven
+codex
+
+# Editor files
+*.swp
+*.swo
+*~
+.DS_Store
+.vscode/
+.idea/
+*.iml
+
+# OS files
+*.orig
+*.bak
+
+# Rust
+**/*.rs.bk

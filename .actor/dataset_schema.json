@@ -1,0 +1,35 @@
+{
+  "actorSpecification": 1,
+  "fields": {
+    "title": "Raven dataset schema",
+    "description": "Output of username search results",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+      "username": {
+        "title": "Searched username",
+        "type": "string",
+        "description": "The username that was searched for"
+      },
+      "links": {
+        "title": "Found profile URLs",
+        "type": "array",
+        "description": "List of social media profile URLs where the username was found"
+      }
+    },
+    "required": ["username", "links"]
+  },
+  "views": {
+    "overview": {
+      "title": "Overview",
+      "transformation": {
+        "fields": ["username", "links"]
+      },
+      "display": {
+        "component": "table",
+        "links": { "label": "Links" },
+        "username": { "label": "Username" }
+      }
+    }
+  }
+}

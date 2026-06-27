@@ -1,0 +1,33 @@
+name: Request a new website
+description: Request that Raven add support for a new website
+title: "Requesting support for: "
+labels: ["site support request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Include the site name in the title. Requests without this will be **closed**.
+  - type: input
+    id: url
+    attributes:
+      label: Site URL
+      description: The main URL of the website
+      placeholder: https://example.com
+    validations:
+      required: true
+  - type: textarea
+    id: detection
+    attributes:
+      label: Detection suggestions
+      description: How should Raven detect usernames on this site?
+      placeholder: |
+        Raven can detect if a username exists by checking if the profile page returns 404...
+    validations:
+      required: false
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true

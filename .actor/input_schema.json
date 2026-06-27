@@ -1,0 +1,16 @@
+{
+  "title": "Raven actor input",
+  "description": "Username(s) to search for across social networks",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "usernames": {
+      "title": "Usernames to search",
+      "type": "array",
+      "description": "A list of usernames to check across social media platforms",
+      "editor": "stringList",
+      "prefill": ["johndoe"]
+    }
+  },
+  "required": ["usernames"]
+}

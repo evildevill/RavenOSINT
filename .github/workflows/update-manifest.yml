@@ -1,0 +1,33 @@
+name: Update Manifest
+
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+jobs:
+  update-manifest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+      - name: Cache dependencies
+        uses: Swatinem/rust-cache@v2
+      - name: Build
+        run: cargo build --release --locked
+      - name: Fetch latest manifest
+        run: |
+          curl -sL https://data.sherlockproject.xyz -o resources/data.json
+          echo "Manifest updated"
+      - name: Validate manifest
+        run: cargo run --release -- --json resources/data.json --local --site GitHub --timeout 5 --no-color test 2>&1 | head -5
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: "auto: update site manifest"
+          title: "Auto-update: site manifest"
+          body: "Automated update of the site manifest from upstream."
+          branch: auto/manifest-update
+          base: master
+          labels: automated

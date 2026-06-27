@@ -1,0 +1,54 @@
+name: Bug report
+description: File a bug report
+labels: ["bug"]
+body:
+  - type: dropdown
+    id: installation
+    attributes:
+      label: Installation method
+      options:
+        - Select one
+        - Built from source (cargo)
+        - Docker
+        - Other (indicate below)
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Raven version
+      description: Run `raven --version` to find your version
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What were you trying to do, what did you expect, and what actually happened?
+      placeholder: |
+        When running `raven johndoe`, I expected to see...
+        Instead, the tool...
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Run `raven --site GitHub johndoe`
+        2. See error...
+    validations:
+      required: true
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional information
+    validations:
+      required: false
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true
