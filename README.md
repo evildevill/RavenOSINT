@@ -119,7 +119,7 @@ Download the latest release for your platform from the [releases page](https://g
 ### Cargo (from crates.io)
 
 ```bash
-cargo install raven
+cargo install raven-osint
 ```
 
 ### Package Managers

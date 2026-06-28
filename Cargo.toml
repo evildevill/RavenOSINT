@@ -1,5 +1,5 @@
 [package]
-name = "raven"
+name = "raven-osint"
 version = "0.1.0"
 edition = "2021"
 description = "A high-performance Rust OSINT tool for username reconnaissance across hundreds of online platforms."
@@ -19,6 +19,10 @@ categories = [
     "command-line-utilities",
     "network-programming"
 ]
+
+[[bin]]
+name = "raven"
+path = "src/main.rs"
 
 [dependencies]
 # Async runtime
