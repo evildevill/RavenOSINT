@@ -51,7 +51,7 @@ Modern Rust OSINT for Username Reconnaissance
 ## Raven vs Sherlock
 
 | Feature | Raven | Sherlock |
-|---|---|---|---|
+|---|---|---|
 | **Runtime** | Compiled Rust binary — no dependencies | Requires Python 3 + pip packages |
 | **Performance** | Async `buffer_unordered` concurrency (default 200) with per-attempt 15s timeout; HTTP/2 enabled | Sequential-ish with thread pools; no per-attempt hard timeout |
 | **Installation** | `cargo install raven-osint` or single binary download | `pip install sherlock` (requires Python venv) |
