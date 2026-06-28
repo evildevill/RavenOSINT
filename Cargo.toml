@@ -5,6 +5,8 @@ edition = "2021"
 description = "A high-performance Rust OSINT tool for username reconnaissance across hundreds of online platforms."
 license = "MPL-2.0"
 repository = "https://github.com/evildevill/Raven"
+homepage = "https://github.com/evildevill/Raven"
+readme = "README.md"
 keywords = [
     "osint",
     "username",
